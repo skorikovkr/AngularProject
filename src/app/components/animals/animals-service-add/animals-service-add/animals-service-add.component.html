@@ -3,14 +3,16 @@
 
     <div class="row">
         <div class="col-6">
-            <form #form="ngForm">
+            <form #form="ngForm" (ngSubmit)="addAnimalService()">
                 <div class="mb-3">
-                  <label for="service-name" class="form-label">Название услуги:</label>
-                  <input type="text" class="form-control" id="service-name">
+                  <label for="name" class="form-label">Название услуги:</label>
+                  <input type="text" class="form-control" id="name" 
+                  [(ngModel)]="addAnimalServiceRequest.name" name="name">
                 </div>
                 <div class="mb-3">
-                    <label for="service-category-id" class="form-label">Id категории услуги:</label>
-                    <input type="number" class="form-control" id="service-category-id">
+                    <label for="categoryId" class="form-label">Id категории услуги:</label>
+                    <input type="number" class="form-control" id="categoryId" 
+                    [(ngModel)]="addAnimalServiceRequest.categoryId" name="categoryId">
                   </div>
                 <button type="submit" class="btn btn-primary">Добавить</button>
             </form>
