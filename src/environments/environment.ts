@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    baseApiUrl: 'http://skorikovkr.ru'
+    baseApiUrl: 'https://skorikovkr.ru'
 };
