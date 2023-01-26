@@ -10,7 +10,7 @@ import { ServiceCategory } from '../models/animal-service-category';
 })
 export class AnimalServicesService {
 
-  baseApiUrl: string = 'http://skorikovkr.ru';
+  baseApiUrl: string = 'https://skorikovkr.ru';
 
   constructor(private http: HttpClient) { }
 
