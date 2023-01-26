@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    baseApiUrl: 'https://localhost:7022'
+    baseApiUrl: 'http://skorikovkr.ru'
 };
