@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AnimalsServiceAddComponent } from './components/animals/animals-service-add/animals-service-add/animals-service-add.component';
 import { AnimalServiceListComponent } from './components/animals/animals-services-list/animal-service-list/animal-service-list.component';
+import { StuffListComponent } from './components/animals/stuff-list/stuff-list.component';
 
 const routes: Routes = [
   {
@@ -9,9 +10,9 @@ const routes: Routes = [
     component: AnimalServiceListComponent
   },
   {
-    path: 'services/add',
-    component: AnimalsServiceAddComponent
-  }
+    path: 'stuff',
+    component: StuffListComponent
+  },
 ];
 
 @NgModule({
