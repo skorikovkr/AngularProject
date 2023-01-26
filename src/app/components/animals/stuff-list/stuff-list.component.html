@@ -1,0 +1,36 @@
+<div class="container my-5">
+    <h1 class="mb-3">Товары для животных</h1>
+    <p>Выберите категорию:</p>
+    <div class="row">    
+        <div class="col-md-4">
+            <select class="col-md-2 form-select form-select-sm" aria-label=".form-select-sm example" #categories [(ngModel)]="selectedCategory">
+                <option default [ngValue]="defaultStuffCategory">{{defaultStuffCategory.name}}</option>
+                <option *ngFor="let stuffCategory of stuffCategories" [ngValue]="stuffCategory">{{stuffCategory.name}}</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <div class="input-group input-group-sm mb-3">
+                <input type="text" class="form-control"
+                aria-describedby="inputGroup-sizing-default"
+                [(ngModel)]="searchWord">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <button type="button" class="col-md-2 btn btn-secondary btn-sm" (click)="onClick()">Поиск</button>
+        </div>
+    </div>
+
+    <table class="table" *ngIf="stuff && stuff.length > 0">
+        <thead>
+            <tr>
+                <th>Название</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let stuff of stuff">
+                <td>{{ stuff.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf="!stuff || stuff.length <= 0">Сервисы для животных не найдены.</p>
+</div>
