@@ -8,13 +8,15 @@ import { AnimalServiceListComponent } from './components/animals/animals-service
 import { AnimalsServiceAddComponent } from './components/animals/animals-service-add/animals-service-add/animals-service-add.component';
 import { FormsModule } from '@angular/forms';
 import { StuffListComponent } from './components/animals/stuff-list/stuff-list.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AnimalServiceListComponent,
     AnimalsServiceAddComponent,
-    StuffListComponent
+    StuffListComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
