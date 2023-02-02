@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { AppSettings } from '../AppSettings';
 import { AnimalService } from '../models/animal-service';
 import { ServiceCategory } from '../models/animal-service-category';
 
@@ -10,7 +11,7 @@ import { ServiceCategory } from '../models/animal-service-category';
 })
 export class AnimalServicesService {
 
-  baseApiUrl: string = 'https://skorikovkr.ru';
+  baseApiUrl: string = AppSettings.API_ENDPOINT;
 
   constructor(private http: HttpClient) { }
 

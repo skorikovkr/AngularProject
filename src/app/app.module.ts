@@ -4,10 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AnimalServiceListComponent } from './components/animals/animals-services-list/animal-service-list/animal-service-list.component';
-import { AnimalsServiceAddComponent } from './components/animals/animals-service-add/animals-service-add/animals-service-add.component';
 import { FormsModule } from '@angular/forms';
-import { StuffListComponent } from './components/animals/stuff-list/stuff-list.component';
+import { AnimalServiceListComponent } from './components/animals-services-list/animal-service-list.component';
+import { AnimalsServiceAddComponent } from './components/animals-service-add/animals-service-add.component';
+import { StuffListComponent } from './components/stuff-list/stuff-list.component';
+import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
@@ -16,7 +17,8 @@ import { HomeComponent } from './components/home/home.component';
     AnimalServiceListComponent,
     AnimalsServiceAddComponent,
     StuffListComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

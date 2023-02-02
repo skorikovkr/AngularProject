@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AnimalService } from '../models/animal-service';
 import { ServiceCategory } from '../models/animal-service-category';
+import { AppSettings } from '../AppSettings';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { ServiceCategory } from '../models/animal-service-category';
 
 export class AnimalServiceCategoryService {
 
-  baseApiUrl: string = 'https://skorikovkr.ru';
+  baseApiUrl: string = AppSettings.API_ENDPOINT;
 
   constructor(private http: HttpClient) { }
 

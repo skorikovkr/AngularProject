@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AppSettings } from '../AppSettings';
 import { StuffCategory } from '../models/stuff-category';
 
 @Injectable({
@@ -8,6 +9,8 @@ import { StuffCategory } from '../models/stuff-category';
 })
 export class StuffCategoryService {
 
+  baseApiUrl: string = AppSettings.API_ENDPOINT;
+  
   constructor(private http: HttpClient) { }
 
   getAllCategories() : Observable<StuffCategory[]> {

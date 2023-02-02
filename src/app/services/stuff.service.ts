@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AppSettings } from '../AppSettings';
 import { Stuff } from '../models/stuff';
 import { StuffCategory } from '../models/stuff-category';
 
@@ -8,6 +9,8 @@ import { StuffCategory } from '../models/stuff-category';
   providedIn: 'root'
 })
 export class StuffService {
+  
+  baseApiUrl: string = AppSettings.API_ENDPOINT;
 
   constructor(private http: HttpClient) { }
 
