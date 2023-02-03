@@ -4,6 +4,8 @@ import { AnimalService } from 'src/app/models/animal-service';
 import { ServiceCategory } from 'src/app/models/animal-service-category';
 import { AnimalServiceCategoryService } from 'src/app/services/animal-service-category.service';
 import { AnimalServicesService } from 'src/app/services/animal-services.service';
+import { BranchOfficesByServiceListComponent } from '../branch-offices-by-service-list/branch-offices-by-service-list.component';
+import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-animal-service-list',
@@ -23,7 +25,8 @@ export class AnimalServiceListComponent implements OnInit {
   searchWord: string = '';
 
   constructor(private animalServicesService: AnimalServicesService,
-    private serviceCategoriesService: AnimalServiceCategoryService) {
+    private serviceCategoriesService: AnimalServiceCategoryService,
+    public dialog: MatDialog) {
     this.selectedCategory = this.defaultServiceCategory;
   }
 
@@ -40,6 +43,12 @@ export class AnimalServiceListComponent implements OnInit {
       }
     )
   };
+
+  openOfficesList(service: AnimalService): void {
+    this.dialog.open(BranchOfficesByServiceListComponent, {
+      data: {service: service},
+    });
+  }
 
   onClick(): void {
     if (this.selectedCategory.id == -1)

@@ -1,20 +1,18 @@
 <div class="container my-4">
-    <form #form="ngForm" (ngSubmit)="login()">
+    <form #form="ngForm" (ngSubmit)="login()" class="col-6">
         <fieldset>
             <legend>Авторизация</legend>
-            <div class="form-field">
+            <div class="form-group">
                 <label for="email" class="form-label">Почта:</label>
                 <input name="email" class="form-control" id="name" 
                 [(ngModel)]="loginInfo.email">
             </div>
-            <div class="form-field">
+            <div class="form-group">
                 <label for="password" class="form-label">Пароль:</label>
                 <input name="password" class="form-control" id="password" 
                 [(ngModel)]="loginInfo.password">
             </div>
         </fieldset>
-        <div class="form-buttons">
-            <button class="button button-primary" type="submit">Login</button>
-        </div>
+        <button class="col-md-1 btn btn-secondary btn-sm my-3" type="submit">Войти</button>
     </form>
 </div>

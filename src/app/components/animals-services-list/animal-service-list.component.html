@@ -12,7 +12,8 @@
             <div class="input-group input-group-sm mb-3">
                 <input type="text" class="form-control" 
                 aria-describedby="inputGroup-sizing-default"
-                [(ngModel)]="searchWord">
+                [(ngModel)]="searchWord"
+                placeholder="Поиск по слову...">
             </div>
         </div>
         <div class="col-md-4">
@@ -20,17 +21,27 @@
         </div>
     </div>
 
-    <table class="table" *ngIf="services && services.length > 0">
-        <thead>
-            <tr>
-                <th>Название</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let service of services">
-                <td>{{ service.name }}</td>
-            </tr>
-        </tbody>
-    </table>
-    <p *ngIf="!services || services.length <= 0">Сервисы для животных не найдены.</p>
+    <div class="row">
+        <div class="col-md-9">
+            <table class="table" *ngIf="services && services.length > 0">
+                <thead>
+                    <tr>
+                        <th>Название</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let service of services">
+                        <td>
+                            <div style="display: flex; justify-content: space-between;">
+                                <div>{{ service.name }}</div>
+                                <button type="button" mat-raised-button (click)="openOfficesList(service)"><i class="bi bi-search"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p *ngIf="!services || services.length <= 0">Сервисы для животных не найдены.</p>
+        </div>
+    </div>
+    
 </div>
