@@ -1,6 +1,26 @@
 <h1 mat-dialog-title>Места оказания услуги: {{ data.service.name }}</h1>
 <div mat-dialog-content>
+  <table class="table" *ngIf="offices && offices.length > 0">
+    <thead>
+        <tr>
+            <th>Организация</th>
+            <th>Адрес филиала</th>
+            <th>Цена услуги</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let office of offices">
+            <td>{{ office.branchOfficeName }}</td>
+            <td><a aria-current="page" [routerLink]="['branchoffice']" 
+                [queryParams]="{id: office.branchOfficeId}" 
+                (click)="onNoClick()">{{ office.branchOfficeAddress }}</a>
+            </td>
+            <td>{{ office.price }}</td>
+        </tr>
+    </tbody>
+</table>
+<p *ngIf="!offices || offices.length <= 0">Ничего не найдено по запросу.</p>
 </div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">Закрыть</button>
+<div mat-dialog-actions class="container">
+  <button mat-button (click)="onNoClick()" class="btn btn-secondary">Закрыть</button>
 </div>

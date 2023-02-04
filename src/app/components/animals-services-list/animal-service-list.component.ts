@@ -2,8 +2,8 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AnimalService } from 'src/app/models/animal-service';
 import { ServiceCategory } from 'src/app/models/animal-service-category';
-import { AnimalServiceCategoryService } from 'src/app/services/animal-service-category.service';
-import { AnimalServicesService } from 'src/app/services/animal-services.service';
+import { AnimalServiceCategoryService } from 'src/app/services/ServiceCategoryService/animal-service-category.service';
+import { AnimalServicesService } from 'src/app/services/ServicesService/animal-services.service';
 import { BranchOfficesByServiceListComponent } from '../branch-offices-by-service-list/branch-offices-by-service-list.component';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 
@@ -66,7 +66,7 @@ export class AnimalServiceListComponent implements OnInit {
         }
       );
     } else {
-      this.animalServicesService.getServicesByCategory(this.selectedCategory)
+      this.animalServicesService.getExistingServicesByCategory(this.selectedCategory)
       .subscribe(
         {
           next: (services) => {

@@ -1,0 +1,28 @@
+<div class="container my-4">
+    <div class="row">
+        <p class="h1">Филиал: "{{office?.organizationName}}"</p>
+        <div class="col-md-4 my-3">
+            <p><b>Адрес:</b> {{ office?.address }}</p>
+            <p><b>Расписание:</b> {{ office?.schedule }}</p>
+            <p><b>Телефон:</b> {{ office?.phone }}</p>
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="col-md-5">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Услуга</th>
+                        <th>Цена</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let service of services">
+                        <td>{{ service.serviceName }}</td>
+                        <td>{{ service.price }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

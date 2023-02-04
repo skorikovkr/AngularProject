@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Stuff } from 'src/app/models/stuff';
 import { StuffCategory } from 'src/app/models/stuff-category';
-import { StuffCategoryService } from 'src/app/services/stuff-category.service';
-import { StuffService } from 'src/app/services/stuff.service';
+import { StuffCategoryService } from 'src/app/services/StuffCategoryService/stuff-category.service';
+import { StuffService } from 'src/app/services/StuffService/stuff.service';
 
 @Component({
   selector: 'app-stuff-list',

@@ -14,6 +14,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatCommonModule, MatNativeDateModule } from '@angular/material/core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BranchOfficeComponent } from './components/branch-office/branch-office.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     StuffListComponent,
     HomeComponent,
     LoginComponent,
-    BranchOfficesByServiceListComponent
+    BranchOfficesByServiceListComponent,
+    BranchOfficeComponent
   ],
   imports: [
     BrowserModule,

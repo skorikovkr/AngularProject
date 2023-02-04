@@ -32,9 +32,14 @@
                 <tbody>
                     <tr *ngFor="let service of services">
                         <td>
-                            <div style="display: flex; justify-content: space-between;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
                                 <div>{{ service.name }}</div>
-                                <button type="button" mat-raised-button (click)="openOfficesList(service)"><i class="bi bi-search"></i></button>
+                                <button type="button" 
+                                    mat-raised-button 
+                                    (click)="openOfficesList(service)"
+                                    class="btn btn-secondary">
+                                    <i class="bi bi-search"></i>
+                                </button>
                             </div>
                         </td>
                     </tr>

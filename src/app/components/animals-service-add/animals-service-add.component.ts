@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { AnimalService } from 'src/app/models/animal-service';
-import { AnimalServicesService } from 'src/app/services/animal-services.service';
+import { AnimalServicesService } from 'src/app/services/ServicesService/animal-services.service';
 
 @Component({
   selector: 'app-animals-service-add',

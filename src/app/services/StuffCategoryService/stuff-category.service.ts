@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AppSettings } from '../AppSettings';
-import { StuffCategory } from '../models/stuff-category';
+import { AppSettings } from '../../AppSettings';
+import { StuffCategory } from '../../models/stuff-category';
 
 @Injectable({
   providedIn: 'root'

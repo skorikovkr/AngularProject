@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { AnimalService } from '../models/animal-service';
-import { ServiceCategory } from '../models/animal-service-category';
-import { AppSettings } from '../AppSettings';
+import { AnimalService } from '../../models/animal-service';
+import { ServiceCategory } from '../../models/animal-service-category';
+import { AppSettings } from '../../AppSettings';
 
 @Injectable({
   providedIn: 'root'
