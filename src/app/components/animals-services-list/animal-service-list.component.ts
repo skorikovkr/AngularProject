@@ -53,7 +53,7 @@ export class AnimalServiceListComponent implements OnInit {
   onClick(): void {
     if (this.selectedCategory.id == -1)
     {
-      this.animalServicesService.getAllServices()
+      this.animalServicesService.getAllExistingServices()
       .subscribe(
         {
           next: (services) => {

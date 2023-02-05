@@ -10,14 +10,16 @@ import { AuthService } from 'src/app/services/AuthService/auth.service';
 })
 export class LoginComponent {
 
+  token: string = '';
+
   loginInfo = {
     email: '',
     password: ''
   };
 
   constructor(private fb:FormBuilder, 
-               private authService: AuthService, 
-               private router: Router) {
+    private authService: AuthService, 
+    private router: Router) {
   }
 
   login() {

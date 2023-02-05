@@ -13,6 +13,12 @@ export class AuthService {
   isLoggedIn = false;
 
   constructor(private http: HttpClient) {
+    let token = localStorage.getItem('jwt-token');
+    console.log(token);
+    if (token)
+      this.isLoggedIn = true;
+    else
+      this.isLoggedIn = false;
   }
     
   login(email: string, password: string) {
@@ -23,5 +29,10 @@ export class AuthService {
       console.log(response);
       localStorage.setItem('jwt-token', response);
     }));
+  }
+
+  logout() {
+    localStorage.removeItem("jwt-token");
+    this.isLoggedIn = false;
   }
 }

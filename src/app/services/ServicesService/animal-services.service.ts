@@ -29,11 +29,11 @@ export class AnimalServicesService {
     return this.http.get<AnimalService[]>(this.baseApiUrl + '/Service/GetExistingServicesByCategoryId', {params: queryParams});
   }
 
+  getAllExistingServices() : Observable<AnimalService[]> {
+    return this.http.get<AnimalService[]>(this.baseApiUrl + '/Service/GetAllExistingServices');
+  }
+
   addService(service: AnimalService) : Observable<AnimalService> {
-    let headers = new HttpHeaders();
-    let token = localStorage.getItem('jwt-token');
-    if (token != null)
-    headers = headers.set('Authorization', `Bearer ${token}`);
-    return this.http.post<AnimalService>(this.baseApiUrl + '/Service/AddService', service, {headers: headers});
+    return this.http.post<AnimalService>(this.baseApiUrl + '/Service/AddService', service);
   }
 }

@@ -7,8 +7,12 @@ import { AuthService } from './services/AuthService/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AngularProject';
+  title = 'Реестр';
 
   constructor(public authService: AuthService) {
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }

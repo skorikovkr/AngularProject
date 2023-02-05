@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +15,7 @@ import { MatCommonModule, MatNativeDateModule } from '@angular/material/core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BranchOfficeComponent } from './components/branch-office/branch-office.component';
+import { AuthInterceptor } from 'src/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,12 @@ import { BranchOfficeComponent } from './components/branch-office/branch-office.
     MatCommonModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true,
+  },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
