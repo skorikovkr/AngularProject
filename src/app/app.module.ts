@@ -16,6 +16,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BranchOfficeComponent } from './components/branch-office/branch-office.component';
 import { AuthInterceptor } from 'src/auth.interceptor';
+import { ServicesListDialogComponent } from './components/services-list-dialog/services-list-dialog.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AuthInterceptor } from 'src/auth.interceptor';
     HomeComponent,
     LoginComponent,
     BranchOfficesByServiceListComponent,
-    BranchOfficeComponent
+    BranchOfficeComponent,
+    ServicesListDialogComponent
   ],
   imports: [
     BrowserModule,

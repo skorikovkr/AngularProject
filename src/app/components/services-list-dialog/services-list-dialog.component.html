@@ -1,0 +1,50 @@
+<div mat-dialog-title>
+    <h1 class="mb-3">Справочник сервисов.</h1>
+</div>
+<div mat-dialog-content>
+  <p>Выберите услугу, чтобы добавить её в ваше филиал:</p>
+  <div class="container-md my-2">
+    <div class="row">    
+        <div class="col-md-4">
+            <select class="col-md-2 form-select form-select-sm" aria-label=".form-select-sm example" #categories [(ngModel)]="selectedCategory">
+                <option default [ngValue]="defaultServiceCategory">{{defaultServiceCategory.name}}</option>
+                <option *ngFor="let serviceCategory of serviceCategories" [ngValue]="serviceCategory">{{serviceCategory.name}}</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <div class="input-group input-group-sm mb-3">
+                <input type="text" class="form-control" 
+                aria-describedby="inputGroup-sizing-default"
+                [(ngModel)]="searchWord"
+                placeholder="Поиск по слову...">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <button type="button" class="col-md-3 btn btn-secondary btn-sm" (click)="onSearchClick()">Поиск</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div >
+            <table class="table table-hover" *ngIf="services && services.length > 0">
+                <thead>
+                    <tr>
+                        <th>Категория</th>
+                        <th>Название</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let service of services">
+                        <td>{{ serviceCategoriesDict.get(service.categoryId)?.name || service.categoryName}}</td>
+                        <td>{{ service.name }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p *ngIf="!services || services.length <= 0">Сервисы для животных не найдены.</p>
+        </div>
+    </div>   
+</div>
+</div>
+<div mat-dialog-actions class="container">
+  <button mat-button (click)="onNoClick()" class="btn btn-secondary">Закрыть</button>
+</div>

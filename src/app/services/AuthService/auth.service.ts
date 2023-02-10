@@ -14,7 +14,6 @@ export class AuthService {
 
   constructor(private http: HttpClient) {
     let token = localStorage.getItem('jwt-token');
-    console.log(token);
     if (token)
       this.isLoggedIn = true;
     else
@@ -26,7 +25,6 @@ export class AuthService {
     return this.http.post(this.baseApiUrl + `/Identity/SignIn`, loginInfo, { responseType: 'text'})
     .pipe(tap((response: any) => {
       this.isLoggedIn = true;
-      console.log(response);
       localStorage.setItem('jwt-token', response);
     }));
   }

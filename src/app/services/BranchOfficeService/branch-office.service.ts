@@ -26,4 +26,16 @@ export class BranchOfficeService {
     var result =  this.http.get<ServiceInBranchOffice[]>(this.baseApiUrl + `/Service/GetServiceByBranchOffice?id=${officeId}`);
     return result;
   }
+
+  deleteServiceInBranchOfficeById(officeId: number, serviceId: number) : Observable<any> {
+    var result =  this.http.post(
+      this.baseApiUrl + `/BranchOffices/DeleteServiceInBranchOfficeById?branchOfficeId=${officeId}&serviceId=${serviceId}`, {});
+    return result;
+  }
+
+  editServiceInBranchOfficeById(officeId: number, serviceId: number, price: number) : Observable<any> {
+    var result =  this.http.post(
+      this.baseApiUrl + `/BranchOffices/EditServiceInBranchOfficeById?branchOfficeId=${officeId}&serviceId=${serviceId}&price=${price}`, {});
+    return result;
+  }
 }
